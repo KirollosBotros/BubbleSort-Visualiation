@@ -3,7 +3,7 @@ import random
 from tower import *
 
 #Constants
-WIDTH = 1000
+WIDTH = 1250
 HEIGHT = 550
 RED = (255,0,0)
 GREEN = (0,255,0)
@@ -15,7 +15,7 @@ counter = 0
 SIDE_MARGIN = 10
 BOTTOM_MARGIN = 5
 LEN = 40
-DELAY = 10
+DELAY = 3
 
 #Create window
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -47,9 +47,7 @@ def main():
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				run = False
-			if event.type == pygame.MOUSEBUTTONDOWN:
-				sort()
-			if event.type == pygame.KEYDOWN:
+			if event.type == pygame.MOUSEBUTTONDOWN or event.type == pygame.KEYDOWN:
 				reset()
 				sort()
 

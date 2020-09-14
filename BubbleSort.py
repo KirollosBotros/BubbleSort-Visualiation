@@ -2,6 +2,7 @@ import pygame
 import random
 from tower import *
 
+#Constants
 WIDTH = 1000
 HEIGHT = 550
 RED = (255,0,0)
@@ -13,13 +14,17 @@ towers = []
 counter = 0
 SIDE_MARGIN = 10
 BOTTOM_MARGIN = 5
-LEN = 75
+LEN = 70
+DELAY = 1
 
+#Create window
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 
 #initialize set of towers with random lengths
-for i in range(LEN):
-	arr.append(random.random()*11)
+def reset():
+	arr.clear()
+	for i in range(LEN):
+		arr.append(random.random()*11)
 
 #swap function
 def swap(arr, pos):
@@ -38,7 +43,7 @@ def notSorted(arr):
 def main():
 	run = True
 	while run:
-
+		reset()
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				run = False
@@ -52,7 +57,7 @@ def main():
 				towers[i].drawTower(WIN)
 				counter += 1
 		
-		drawAll(arr, WHITE)
+		drawAll(arr, RED)
 		pygame.display.update()
 
 		def sort():		
@@ -63,7 +68,7 @@ def main():
 						swap(arr, i)
 						towers.clear()
 						drawAll(arr, GREEN)				
-						pygame.time.wait(1)
+						pygame.time.wait(DELAY)
 						pygame.display.update()	
 			print("Done")
 main()

@@ -3,7 +3,7 @@ import random
 from tower import *
 
 #Constants
-WIDTH = 1250
+WIDTH = 1000
 HEIGHT = 550
 RED = (255,0,0)
 GREEN = (0,255,0)

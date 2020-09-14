@@ -65,4 +65,5 @@ def main():
 						drawAll(arr, GREEN)				
 						pygame.time.wait(1)
 						pygame.display.update()	
+			print("Done")
 main()

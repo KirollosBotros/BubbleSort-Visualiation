@@ -14,8 +14,8 @@ towers = []
 counter = 0
 SIDE_MARGIN = 10
 BOTTOM_MARGIN = 5
-LEN = 70
-DELAY = 1
+LEN = 40
+DELAY = 10
 
 #Create window
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -25,6 +25,7 @@ def reset():
 	arr.clear()
 	for i in range(LEN):
 		arr.append(random.random()*11)
+reset()
 
 #swap function
 def swap(arr, pos):
@@ -43,17 +44,19 @@ def notSorted(arr):
 def main():
 	run = True
 	while run:
-		reset()
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				run = False
-			if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
+			if event.type == pygame.MOUSEBUTTONDOWN:
+				sort()
+			if event.type == pygame.KEYDOWN:
+				reset()
 				sort()
 
-		def drawAll(arr, col):
+		def drawAll(array, col):
 			counter = 0
-			for i in range(len(arr)):
-				towers.append(tower(SIDE_MARGIN+counter*((WIDTH-SIDE_MARGIN*2)/(len(arr))), HEIGHT - BOTTOM_MARGIN - arr[i]*40, ((WIDTH-SIDE_MARGIN*2)/(len(arr)))*(7/9), arr[i]*40, col))
+			for i in range(len(array)):
+				towers.append(tower(SIDE_MARGIN+counter*((WIDTH-SIDE_MARGIN*2)/(len(array))), HEIGHT - BOTTOM_MARGIN - array[i]*40, ((WIDTH-SIDE_MARGIN*2)/(len(array)))*(7/9), array[i]*40, col))
 				towers[i].drawTower(WIN)
 				counter += 1
 		

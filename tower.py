@@ -11,3 +11,6 @@ class tower():
 	
 	def drawTower(self, win):
 		pygame.draw.rect(win, self.colour, (self.x, self.y, self.width, self.height))
+
+	def changeCol(self, win, col):
+		pygame.draw.rect(win, col, (self.x, self.y, self.width, self.height))

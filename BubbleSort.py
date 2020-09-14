@@ -19,7 +19,6 @@ WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 for i in range(LEN):
 	arr.append(random.random()*11)
 
-
 #Tower class that describes a single tower object to be sorted be heights
 class tower():
 	def __init__(self, x, y, width, height, colour):
@@ -65,7 +64,7 @@ def main():
 		
 		drawAll(arr, WHITE)
 		pygame.display.update()
-		
+
 		def sort():		
 			while(notSorted(arr)):
 				for i in range (len(arr)-1):

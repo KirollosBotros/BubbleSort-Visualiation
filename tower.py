@@ -1,6 +1,6 @@
 import pygame
 
-#Tower class that describes a single tower object to be sorted be heights
+#Tower class that describes a single tower object to be sorted by heights
 class tower():
 	def __init__(self, x, y, width, height, colour):
 		self.x = x

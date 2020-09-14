@@ -1,5 +1,6 @@
 import pygame
 import random
+from tower import *
 
 WIDTH = 1000
 HEIGHT = 550
@@ -16,20 +17,9 @@ LEN = 50
 
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 
+#initialize set of towers with random lengths
 for i in range(LEN):
 	arr.append(random.random()*11)
-
-#Tower class that describes a single tower object to be sorted be heights
-class tower():
-	def __init__(self, x, y, width, height, colour):
-		self.x = x
-		self.y = y
-		self.width = width
-		self.height = height
-		self.colour = colour
-	
-	def drawTower(self, win):
-		pygame.draw.rect(win, self.colour, (self.x, self.y, self.width, self.height))
 
 #swap function
 def swap(arr, pos):

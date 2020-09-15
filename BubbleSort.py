@@ -14,7 +14,7 @@ towers = []
 counter = 0
 SIDE_MARGIN = 3
 BOTTOM_MARGIN = 3
-LEN = 75
+LEN = 50
 DELAY = 2
 
 pygame.init()
@@ -26,7 +26,7 @@ WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 def reset():
 	arr.clear()
 	for i in range(LEN):
-		arr.append(random.random()*11.4)
+		arr.append(random.random()*12)
 reset()
 
 #swap function
@@ -42,6 +42,7 @@ def notSorted(arr):
 			return True
 	return False
 
+#intialize font and text
 font = pygame.font.SysFont("timesnewroman", 50)
 text = "Click to Start Visualization"
 size = font.size(text)
@@ -52,10 +53,12 @@ def main():
 	notFirst = False
 
 	while run:
+		#display label at the top of the screen
 		label = font.render(text, 1, (0,0,0))
 		WIN.blit(label, (WIDTH/2 - font.size(text)[0]/2, 10))
 		pygame.display.update()
 
+		#Event handler to check is WIN is closed or if mouse is pressed
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				run = False
@@ -66,8 +69,7 @@ def main():
 					sort()
 				notFirst = True
 		
-		
-	
+		#draws all the towers according to their respective heights and colours in arr
 		def drawAll(array):
 			counter = 0
 			for i in range(len(array)):
@@ -80,11 +82,11 @@ def main():
 				towers[i].drawTower(WIN)
 				counter += 1
 		
+		#draw inital unsorted towers on screen
 		WIN.fill((225, 250, 200))
 		drawAll(arr)
 		
-		#pygame.display.update()
-
+		#main sorting function: Bubble Sort
 		def sort():		
 			while(notSorted(arr)):
 				for i in range (len(arr)-1):
@@ -95,6 +97,5 @@ def main():
 						drawAll(arr)				
 						pygame.time.wait(DELAY)
 						pygame.display.update()	
-			print("Done")
 			text = "Done"
 main()

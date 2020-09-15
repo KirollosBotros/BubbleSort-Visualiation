@@ -9,8 +9,10 @@ class tower():
 		self.height = height
 		self.colour = colour
 	
+	#draws a single tower given initialization parameters
 	def drawTower(self, win):
 		pygame.draw.rect(win, self.colour, (self.x, self.y, self.width, self.height))
 
+	#changes colour of a tower to a colour specified as a parameter
 	def changeCol(self, win, col):
 		pygame.draw.rect(win, col, (self.x, self.y, self.width, self.height))

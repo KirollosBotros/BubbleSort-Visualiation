@@ -12,10 +12,12 @@ WHITE = (255,255,255)
 arr = []
 towers = []
 counter = 0
-SIDE_MARGIN = 5
-BOTTOM_MARGIN = 5
-LEN = 70
-DELAY = 1
+SIDE_MARGIN = 3
+BOTTOM_MARGIN = 3
+LEN = 75
+DELAY = 2
+
+pygame.init()
 
 #Create window
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -24,7 +26,7 @@ WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 def reset():
 	arr.clear()
 	for i in range(LEN):
-		arr.append(random.random()*11)
+		arr.append(random.random()*11.4)
 reset()
 
 #swap function
@@ -40,34 +42,48 @@ def notSorted(arr):
 			return True
 	return False
 
+font = pygame.font.SysFont("timesnewroman", 50)
+text = "Click to Start Visualization"
+size = font.size(text)
+
 #main loop
 def main():
 	run = True
+	notFirst = False
+
 	while run:
+		label = font.render(text, 1, (0,0,0))
+		WIN.blit(label, (WIDTH/2 - font.size(text)[0]/2, 10))
+		pygame.display.update()
+
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				run = False
 			if event.type == pygame.MOUSEBUTTONDOWN:
 				sort()
-			if event.type == pygame.KEYDOWN:
-				reset()
-				sort()
-
+				if notFirst:
+					reset()
+					sort()
+				notFirst = True
+		
+		
+	
 		def drawAll(array):
 			counter = 0
 			for i in range(len(array)):
 				TOWER_X = SIDE_MARGIN+counter*((WIDTH-SIDE_MARGIN*2)/(len(array)))
 				TOWER_Y = HEIGHT - BOTTOM_MARGIN - array[i]*40
-				TOWER_W = ((WIDTH-SIDE_MARGIN*2)/(len(array)))*(7/9)
+				TOWER_W = ((WIDTH-SIDE_MARGIN*2)/(len(array)))*(.85)
 				TOWER_H = array[i]*40
-				TOWER_COL = (0, array[i]*40/2, 0)
+				TOWER_COL = (0, 255-array[i]*18.88, 0)
 				towers.append(tower(TOWER_X, TOWER_Y, TOWER_W, TOWER_H , TOWER_COL))
 				towers[i].drawTower(WIN)
 				counter += 1
 		
 		WIN.fill((225, 250, 200))
 		drawAll(arr)
-		pygame.display.update()
+		
+		#pygame.display.update()
 
 		def sort():		
 			while(notSorted(arr)):
@@ -80,4 +96,5 @@ def main():
 						pygame.time.wait(DELAY)
 						pygame.display.update()	
 			print("Done")
+			text = "Done"
 main()

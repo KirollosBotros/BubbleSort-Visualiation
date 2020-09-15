@@ -53,12 +53,16 @@ def main():
 			if event.type == pygame.KEYDOWN:
 				reset()
 				sort()
-				print("sdf")
 
 		def drawAll(array):
 			counter = 0
 			for i in range(len(array)):
-				towers.append(tower(SIDE_MARGIN+counter*((WIDTH-SIDE_MARGIN*2)/(len(array))), HEIGHT - BOTTOM_MARGIN - array[i]*40, ((WIDTH-SIDE_MARGIN*2)/(len(array)))*(7/9), array[i]*40, (0, array[i]*40/2, 0)))
+				TOWER_X = SIDE_MARGIN+counter*((WIDTH-SIDE_MARGIN*2)/(len(array)))
+				TOWER_Y = HEIGHT - BOTTOM_MARGIN - array[i]*40
+				TOWER_W = ((WIDTH-SIDE_MARGIN*2)/(len(array)))*(7/9)
+				TOWER_H = array[i]*40
+				TOWER_COL = (0, array[i]*40/2, 0)
+				towers.append(tower(TOWER_X, TOWER_Y, TOWER_W, TOWER_H , TOWER_COL))
 				towers[i].drawTower(WIN)
 				counter += 1
 		

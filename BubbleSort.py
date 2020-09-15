@@ -16,7 +16,6 @@ SIDE_MARGIN = 5
 BOTTOM_MARGIN = 5
 LEN = 70
 DELAY = 1
-first = False
 
 #Create window
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -81,5 +80,4 @@ def main():
 						pygame.time.wait(DELAY)
 						pygame.display.update()	
 			print("Done")
-			first = True
 main()

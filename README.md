@@ -1,7 +1,7 @@
 # BubbleSort-Visualiation
 A graphic visualization of the Bubble Sort sorting algorithm created in python using the 2D graphics module pygame
 
-## Images:
+## The Program:
 * When the program is intially run, an array of tower objects are generated with random heights. Their shade of green is associated with their heights with the shorter towers having a higher green value in their RGB (appears brighter) and taller towers having a lower green value in their RGB (appears darker).
 
 ![GitHub Logo](/images/start.JPG)

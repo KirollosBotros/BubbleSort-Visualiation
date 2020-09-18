@@ -7,6 +7,7 @@ from colours import *
 WIDTH = 1000
 HEIGHT = 550
 COL = GREEN
+BACK = getBack(COL)
 arr = []
 towers = []
 counter = 0
@@ -15,8 +16,7 @@ BOTTOM_MARGIN = 3
 LEN = 50
 DELAY = 2
 
-BACK = getBack(COL)
-
+#pygame initialization
 pygame.init()
 pygame.display.set_caption("Bubble Sort Visualization")
 

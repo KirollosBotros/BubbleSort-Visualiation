@@ -6,7 +6,7 @@ from colours import *
 #Constants
 WIDTH = 1000
 HEIGHT = 550
-COL = RED
+COL = GREEN
 arr = []
 towers = []
 counter = 0
@@ -18,6 +18,7 @@ DELAY = 2
 BACK = getBack(COL)
 
 pygame.init()
+pygame.display.set_caption("Bubble Sort Visualization")
 
 #Create window
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -55,7 +56,7 @@ def main():
 	while run:
 		#display label at the top of the screen
 		label = font.render(text, 1, (0,0,0))
-		WIN.blit(label, (WIDTH/2 - font.size(text)[0]/2, 10))
+		WIN.blit(label, (int(WIDTH/2 - font.size(text)[0]/2), 10))
 		pygame.display.update()
 
 		#Event handler to check is WIN is closed or if mouse is pressed

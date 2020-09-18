@@ -42,7 +42,7 @@ def notSorted(arr):
 			return True
 	return False
 
-#intialize font and text
+#initialize font and text
 font = pygame.font.SysFont("timesnewroman", 50)
 text = "Click to Start Visualization"
 size = font.size(text)

@@ -10,7 +10,11 @@ A graphic visualization of the Bubble Sort sorting algorithm created in python u
 
 ![GitHub Logo](/images/end.JPG)
 
-* This visualization has been programed dynamically so that the number of towers, delay and colours can be customized easily by changing the constants. The following are some examples of different looks the visualization can have:
+* This visualization has been programed dynamically so that the number of towers, delay and colours can be customized easily by changing the constants. The following is a map of the constants:
+	* "COL" (initialized at GREEN): the colour theme for the visualization
+	* "LEN" (initialized at 50): the number of towers
+	* "DELAY" (initialized at 2): the number of milliseconds to wait before each iteration in the sorting algorithm
+ The following are some examples of different looks the visualization can have:
 
 ### Blue theme with 100 towers:
 

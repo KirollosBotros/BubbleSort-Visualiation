@@ -6,7 +6,7 @@ A graphic visualization of the Bubble Sort sorting algorithm created in python u
 
 ![GitHub Logo](/images/start.JPG)
 
-* When the user clicks anywhere on the window, the array of towers is sorted using the bubble sort algorithm. Between each iteration of the sort, there is a small delay (customizable) to allow the user to visually see the array get sorted. Once the array of towers is fully sorted, the towers will appear in increasing order (from left to right) with their shades of green going from light to dark.
+* When the user clicks anywhere on the window, the array of towers is sorted using the bubble sort algorithm. Between each iteration of the sort, there is a small delay (customizable) to allow the user to visually see the array get sorted. Once the array of towers is fully sorted, the towers will appear in increasing order (from left to right) with their shades of green going from light to dark. The user can click anywhere on the window again to reset the array of towers randomly and start sorting.
 
 ![GitHub Logo](/images/end.JPG)
 

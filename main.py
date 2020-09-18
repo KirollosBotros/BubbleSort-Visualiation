@@ -6,7 +6,7 @@ from colours import *
 #Constants
 WIDTH = 1000
 HEIGHT = 550
-COL = BLUE
+COL = GREEN
 arr = []
 towers = []
 counter = 0

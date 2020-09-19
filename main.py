@@ -1,12 +1,13 @@
 import pygame
 import random
+import sys
 from tower import *
 from colours import *
 
 #Constants
 WIDTH = 1000
 HEIGHT = 550
-COL = GREEN
+COL = BLUE
 BACK = getBack(COL)
 arr = []
 towers = []
@@ -63,6 +64,8 @@ def main():
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				run = False
+				pygame.quit()
+				sys.exit()
 			if event.type == pygame.MOUSEBUTTONDOWN:
 				sort()
 				if notFirst:
